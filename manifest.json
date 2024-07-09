@@ -5,7 +5,6 @@
   "description": "Highlight content on a web page as you read it.",
   "permissions": [
     "activeTab",
-    "scripting",
     "storage"
   ],
   "background": {
@@ -14,7 +13,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
   ],
   "action": {
